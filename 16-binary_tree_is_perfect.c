@@ -1,8 +1,8 @@
 #include "binary_trees.h"
 /**
- * binary_tree_is_perfect - check to make sure the tree is full from root
+ * binary_tree_is_perfect - check to make sure the tree is perfect from root
  * @tree: root of the tree to check
- * Return: 1 if the tree is full, else 0
+ * Return: 1 if the tree is perfect, else 0
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
