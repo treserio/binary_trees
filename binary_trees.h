@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -45,5 +46,8 @@ binary_tree_t *binary_trees_ancestor(
 	const binary_tree_t *first,
 	const binary_tree_t *second
 );
+/* level order */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+bool print_level(binary_tree_t *tree, size_t level, void (*func)(int));
+
 #endif /* _BINARY_TREES_H_ */
