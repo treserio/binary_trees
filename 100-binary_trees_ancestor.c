@@ -13,6 +13,10 @@ binary_tree_t *binary_trees_ancestor(
 	binary_tree_t *f_run, *s_run;
 	int found = 0;
 
+	/* exit case */
+	if (!first || !second)
+		return NULL;
+
 	for (f_run = (binary_tree_t *)first;
 		f_run && !found;
 		f_run = f_run->parent)
