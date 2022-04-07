@@ -15,7 +15,7 @@ binary_tree_t *binary_trees_ancestor(
 
 	/* exit case */
 	if (!first || !second)
-		return NULL;
+		return (NULL);
 
 	for (f_run = (binary_tree_t *)first;
 		f_run && !found;
