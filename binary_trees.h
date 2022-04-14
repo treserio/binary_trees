@@ -63,6 +63,7 @@ bool is_bst(const binary_tree_t *node, int min, int max);
 bst_t *bst_insert(bst_t **tree, int value);
 bool bst_search(bst_t *node, int value);
 bst_t *bst_add(bst_t *run, bst_t *new);
-
+/* array to bst */
+bst_t *array_to_bst(int *array, size_t size);
 
 #endif /* _BINARY_TREES_H_ */
