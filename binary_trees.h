@@ -65,5 +65,8 @@ bool my_srch(bst_t *node, int value);
 bst_t *bst_add(bst_t *run, bst_t *new);
 /* array to bst */
 bst_t *array_to_bst(int *array, size_t size);
+/* bst_search */
+bst_t *bst_search(const bst_t *tree, int value);
+bst_t *pntr_search(bst_t *node, int value);
 
 #endif /* _BINARY_TREES_H_ */
