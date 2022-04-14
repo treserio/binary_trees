@@ -21,7 +21,7 @@ typedef struct binary_tree_s
 	struct binary_tree_s *parent;
 	struct binary_tree_s *left;
 	struct binary_tree_s *right;
-} binary_tree_t;
+} binary_tree_t, bst_t;
 
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
@@ -58,6 +58,11 @@ bool print_level(binary_tree_t *node, size_t level, size_t row, void (*func)(int
 
 /* binary search tree */
 int binary_tree_is_bst(const binary_tree_t *tree);
-bool is_search(const binary_tree_t *node, int min, int max);
+bool is_bst(const binary_tree_t *node, int min, int max);
+/* binary search tree insert */
+bst_t *bst_insert(bst_t **tree, int value);
+bool bst_search(bst_t *node, int value);
+bst_t *bst_add(bst_t *run, bst_t *new);
+
 
 #endif /* _BINARY_TREES_H_ */

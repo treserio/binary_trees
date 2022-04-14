@@ -9,17 +9,17 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 	/* INT_MIN INT_MAX */
-	return (is_search(tree, INT_MIN, INT_MAX));
+	return (is_bst(tree, INT_MIN, INT_MAX));
 }
 
 /**
- * is_search - run the actual recursive check for Binary Search
+ * is_bst - run the actual recursive check for Binary Search
  * @node: the root of the tree to run func on
  * @min: the minimum value for this node
  * @max: the maximum value for this node
  * Return: true of node and children are a Binary Search, else 0
  */
-bool is_search(const binary_tree_t *node, int min, int max)
+bool is_bst(const binary_tree_t *node, int min, int max)
 {
 	/* null nodes are true by default */
 	if (!node)
@@ -35,7 +35,7 @@ bool is_search(const binary_tree_t *node, int min, int max)
 		node->right->n >= max))
 		return (0);
 
-	return (is_search(node->left, min, node->n) &&
-			is_search(node->right, node->n, max));
+	return (is_bst(node->left, min, node->n) &&
+			is_bst(node->right, node->n, max));
 }
 
