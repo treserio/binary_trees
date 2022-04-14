@@ -29,7 +29,10 @@ bst_t *bst_insert(bst_t **tree, int value)
 	}
 	/* check if value is in the tree */
 	if (bst_search((*tree), value))
+	{
+		free(new);
 		return (NULL);
+	}
 	/* add the node to the tree with recursive function */
 	return (bst_add((*tree), new));
 }
