@@ -6,20 +6,41 @@
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
+	size_t sz;
 	/* exit case */
 	if (!tree)
 		return (0);
-
+	/* find the size */
+	sz = binary_tree_size(tree);
+	/* check each node vs the total size */
+	return (node_idx_chk(tree, 1, sz));
 }
 
-/* count number of nodes and compare to indexes
-* if root = p
-* root->left = 2*p + 1, maybe 2*p?
-* root->right = 2*p + 2, maybe 2*p + 1?
-* if index > total nodes, incomplete
-*/
-
-
+/**
+ * node_idx_chk - check the index of the node vs the size of the tree
+ * @node: root of the tree to check
+ * @idx: the index of the node
+ * @sz: the size of the tree
+ * Return: 0 if the node's index is greater than the size of the tree
+ */
+bool node_idx_chk(const binary_tree_t *node, size_t idx, size_t sz)
+{
+	/* null are 1 by default */
+	if (!node)
+		return (1);
+	/* false case */
+	if (idx > sz)
+		return 0;
+	/* determin which nodes to run recursively on */
+	if (node->left && node->right)
+		return node_idx_chk(node->left, idx * 2, sz) &&
+			node_idx_chk(node->right, idx * 2 + 1, sz);
+	else if (node->left)
+		return node_idx_chk(node->left, idx * 2, sz);
+	else
+		/* default run on right, on null node will return 1 */
+		return node_idx_chk(node->right, idx * 2 + 1, sz);
+}
 
 /**
  * binary_tree_size - measures the size of a binary tree

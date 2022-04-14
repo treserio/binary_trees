@@ -50,6 +50,7 @@ binary_tree_t *binary_trees_ancestor(
 
 /* =============== */
 int binary_tree_is_complete(const binary_tree_t *tree);
+bool node_idx_chk(const binary_tree_t *node, size_t idx, size_t sz);
 
 /* complete testing */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
