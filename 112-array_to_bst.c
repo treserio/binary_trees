@@ -1,14 +1,15 @@
 #include "binary_trees.h"
 /**
- * bst_insert - insert a value into a new binary search tree (bst) node
- * @tree: a pointer to a pointer of the bst_t tree root
- * @value: the value to insert
- * Return: the new node in the bst
+ * array_to_bst - turn an unsorted array into a bst
+ * @array: the array of values to use
+ * @size: the number of values in the array
+ * Return: the root node, or NULL on failure
  */
 bst_t *array_to_bst(int *array, size_t size)
 {
 	size_t i;
 	bst_t *new, *root;
+	/* exit case */
 	if (!array)
 		return (NULL);
 	/* set the root node */
