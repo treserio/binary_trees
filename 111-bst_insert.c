@@ -71,12 +71,17 @@ bst_t *bst_add(bst_t *run, bst_t *new)
 		return (bst_add(run->left, new));
 	}
 	/* insert right method */
-	/* insert here? */
-	if (!run->right)
+	if (new->n > run->n)
 	{
-		new->parent = run;
-		run->right = new;
-		return (new);
+		/* insert here? */
+		if (!run->right)
+		{
+			new->parent = run;
+			run->right = new;
+			return (new);
+		}
+		return (bst_add(run->right, new));
 	}
-	return (bst_add(run->right, new));
+	/* value is equal */
+	return (NULL);
 }
