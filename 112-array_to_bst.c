@@ -26,7 +26,7 @@ bst_t *array_to_bst(int *array, size_t size)
 		new = malloc(sizeof(bst_t));
 		if (!new)
 		{
-			binary_tree_delete(root);
+			binary_tree_del(root);
 			return (NULL);
 		}
 		new->parent = NULL;
@@ -39,14 +39,14 @@ bst_t *array_to_bst(int *array, size_t size)
 }
 
 /**
- * binary_tree_delete - free a binary tree
+ * binary_tree_del - free a binary tree
  * @tree: root of the tree to delete
  */
-void binary_tree_delete(binary_tree_t *tree)
+void binary_tree_del(binary_tree_t *tree)
 {
 	if (!tree)
 		return;
-	binary_tree_delete(tree->left);
-	binary_tree_delete(tree->right);
+	binary_tree_del(tree->left);
+	binary_tree_del(tree->right);
 	free(tree);
 }
