@@ -8,10 +8,16 @@
 bst_t *bst_search(const bst_t *tree, int value)
 {
 	if (!tree)
-		return NULL;
+		return (NULL);
 	return (pntr_search((bst_t *)tree, value));
 }
 
+/**
+ * pntr_search - finds the value in the bst
+ * @node: the root of the tree to search
+ * @value: the value to search for
+ * Return: pointer to the node containing the value, or NULL
+ */
 bst_t *pntr_search(bst_t *node, int value)
 {
 	bst_t *left, *right;
