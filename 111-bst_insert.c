@@ -28,7 +28,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 
 	}
 	/* check if value is in the tree */
-	if (bst_search((*tree), value))
+	if (my_srch((*tree), value))
 	{
 		free(new);
 		return (NULL);
@@ -37,18 +37,18 @@ bst_t *bst_insert(bst_t **tree, int value)
 	return (bst_add((*tree), new));
 }
 /**
- * bst_search - search for a value in a bst
+ * my_srch - search for a value in a bst
  * @node: the node to begin searching at
  * @value: the value to find
  * Return: 1 if the value is present, else 0
  */
-bool bst_search(bst_t *node, int value)
+bool my_srch(bst_t *node, int value)
 {
 	if (!node)
 		return (0);
 	if (node->n == value)
 		return (1);
-	return (bst_search(node->left, value) || bst_search(node->right, value));
+	return (my_srch(node->left, value) || my_srch(node->right, value));
 }
 /**
  * bst_add - insert a value into a new binary search tree (bst) node
