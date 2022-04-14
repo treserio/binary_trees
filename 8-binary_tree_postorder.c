@@ -11,9 +11,9 @@ void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 	if (tree == NULL || func == NULL)
 		return;
 	/* first traverse left */
-	binary_tree_preorder(tree->left, func);
+	binary_tree_postorder(tree->left, func);
 	/* now recur on right subtree */
-	binary_tree_preorder(tree->right, func);
+	binary_tree_postorder(tree->right, func);
 	/* run the function on the node's value */
 	func(tree->n);
 }
