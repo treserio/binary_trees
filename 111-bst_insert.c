@@ -83,5 +83,6 @@ bst_t *bst_add(bst_t *run, bst_t *new)
 		return (bst_add(run->right, new));
 	}
 	/* value is equal */
+	free(new);
 	return (NULL);
 }
