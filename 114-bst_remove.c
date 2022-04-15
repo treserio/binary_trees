@@ -8,7 +8,9 @@
 bst_t *bst_remove(bst_t *root, int value)
 {
 	bst_t *target, *new_root;
-	/* assume root is a node */
+
+	if (!root)
+		return (NULL);
 	if (root->n == value)
 		return (rm_node(root, root));
 	target = bst_search(root, value);
