@@ -109,12 +109,14 @@ void parent_lt_rt(bst_t *del, bst_t *run)
 	if (run && run->right)
 	{
 		run->parent->right = run->right;
-		run->right->parent = run->parent;
+		if (run->parent != del)
+			run->right->parent = run->parent;
 	}
 	else if (run && run->left)
 	{
 		run->parent->left = run->left;
-		run->left->parent = run->parent;
+		if (run->parent != del)
+			run->left->parent = run->parent;
 	}
 	/* NULL run->parent->left or right if == run */
 	if (run && run->parent && run->parent->left && run->parent->left == run)
