@@ -71,6 +71,7 @@ bst_t *bst_search(const bst_t *tree, int value);
 bst_t *pntr_search(bst_t *node, int value);
 /* remove a bst node */
 bst_t *bst_remove(bst_t *root, int value);
-bst_t *rm_node(bst_t *del);
+bst_t *rm_node(bst_t *old_root, bst_t *del);
+void parent_lt_rt(bst_t *del, bst_t *run);
 
 #endif /* _BINARY_TREES_H_ */
