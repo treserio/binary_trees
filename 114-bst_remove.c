@@ -27,6 +27,7 @@ bst_t *rm_node(bst_t *old_root, bst_t *del)
 	/* check if we're on a leaf */
 	if (!del->left && !del->right)
 	{
+		parent_lt_rt(del, NULL);
 		free(del);
 		return (old_root);
 	}
