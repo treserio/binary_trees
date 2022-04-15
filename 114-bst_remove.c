@@ -106,12 +106,12 @@ void parent_lt_rt(bst_t *del, bst_t *run)
 	/* pull up any of run's ancestors */
 	if (run && run->right)
 	{
-		run->parent->left = run->right;
+		run->parent->right = run->right;
 		run->right->parent = run->parent;
 	}
 	else if (run && run->left)
 	{
-		run->parent->right = run->left;
+		run->parent->left = run->left;
 		run->left->parent = run->parent;
 	}
 	/* NULL run->parent->left or right if == run */
